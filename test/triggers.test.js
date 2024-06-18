@@ -13,7 +13,7 @@
 //         // requests are made using your integration's actual middleware
 //         // make sure to pass the normal `bundle` arg to `appTester` if your requests need auth
 //         const response = await z.request(
-//           'https://8470-109-121-61-93.ngrok-free.app/api/passed_builds',
+//           'https://72cf-109-121-61-93.ngrok-free.app/api/v1/builds/passed_builds',
 //           {
 //             params: {},
 //           }
@@ -26,7 +26,7 @@
 //       {
 //         // you must provide auth data for authenticated requests
 //         // (just like running a normal trigger)
-//         authData: { apiKey: 'Ma8pVDStntQMDfjwyXV1Mw' },
+//         authData: { apiKey: 'hQW9p9lZmGSZhQS8Zh755A' },
 //         // put arbitrary function params in `inputData`
 //         inputData: {},
 //       }
@@ -34,24 +34,14 @@
 
 //     expect(results.data).toEqual([
 //       {
-//           "id": 1000021,
-//           "status": "passed",
-//           "repo_name": "TestProject1",
-//           "owner": "sale",
-//           "author": "sale-kolosek",
-//           "commit": "das231sda123132",
-//           "commit_msg": "Commit 1",
-//           "branch_name": "Test 1"
-//       },
-//       {
-//           "id": 1000022,
-//           "status": "passed",
-//           "repo_name": "TestProject1",
-//           "owner": "sale",
-//           "author": "sale-kolosek",
-//           "commit": "faz23dssda12f332",
-//           "commit_msg": "Commit 2",
-//           "branch_name": "Test 2"
+//        "id": "0a8526d",
+// 	     "author": "Aleksandar M",
+// 	     "branch_name": "main",
+// 	     "commit": "0a8526def2eaef2ec35c6bf69d9c7ba30393a9ce",
+// 	     "commit_msg": "Update config.yml",
+// 	     "owner": "Aleksandar M.",
+// 	     "status": "passed",
+// 	     "repo_name": "basic-app"
 //       }
 //     ]);
 //   });

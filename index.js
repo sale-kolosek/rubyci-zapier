@@ -29,7 +29,7 @@ module.exports = {
       // `operation` implements the API call used to fetch the data
       operation: {
         perform: {
-          url: 'https://ruby.ci/api/passed_builds',
+          url: 'https://ruby.ci/api/v1/builds/passed_builds',
         },
         sample: {
           id: 1000021,
