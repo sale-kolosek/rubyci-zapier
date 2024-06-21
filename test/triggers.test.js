@@ -13,9 +13,11 @@
 //         // requests are made using your integration's actual middleware
 //         // make sure to pass the normal `bundle` arg to `appTester` if your requests need auth
 //         const response = await z.request(
-//           'https://72cf-109-121-61-93.ngrok-free.app/api/v1/builds/passed_builds',
+//           'https://e860-109-121-61-93.ngrok-free.app/api/v1/builds/passed_builds',
 //           {
-//             params: {},
+//             params: {
+//               branch: bundle.inputData.branch
+//             },
 //           }
 //         );
 
@@ -28,7 +30,9 @@
 //         // (just like running a normal trigger)
 //         authData: { apiKey: 'hQW9p9lZmGSZhQS8Zh755A' },
 //         // put arbitrary function params in `inputData`
-//         inputData: {},
+//         inputData: {
+//         	branch: 'main'
+//         },
 //       }
 //     );
 

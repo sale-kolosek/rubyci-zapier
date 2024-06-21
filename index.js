@@ -4,6 +4,22 @@ const {
   afters = [],
 } = require('./authentication');
 
+const listBuilds = async (z, bundle) => {
+  // Custom processing of bundle.inputData would go here...
+
+  const httpRequestOptions = {
+    url: 'https://ruby.ci/api/v1/builds/passed_builds',
+    method: 'GET',
+    params: {
+      branch: bundle.inputData.branch
+    },
+  };
+  const response = await z.request(httpRequestOptions);
+  const builds = response.data;
+
+  return builds;
+};
+
 module.exports = {
   // This is just shorthand to reference the installed dependencies you have.
   // Zapier will need to know these before we can upload.
@@ -28,9 +44,14 @@ module.exports = {
       },
       // `operation` implements the API call used to fetch the data
       operation: {
-        perform: {
-          url: 'https://ruby.ci/api/v1/builds/passed_builds',
-        },
+        inputFields: [
+          {
+            key: 'branch',
+            required: true,
+            label: 'Branch Name'
+          },
+        ],
+        perform: listBuilds,
         sample: {
           id: 1000021,
           status: 'passed',
@@ -46,7 +67,7 @@ module.exports = {
           {
             key: 'id',
             label: 'Build ID',
-            type: 'integer',
+            type: 'string',
           },
           {
             key: 'status',
